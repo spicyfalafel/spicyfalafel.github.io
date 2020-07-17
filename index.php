@@ -6,10 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="index.css">
-    <title>hello</title>
+    <title>Lab1</title>
 </head>
 <body>
-    <img src="kotik.jpg" alt="fsfds">
-    <p>HELLO</p>
+
 </body>
 </html>
