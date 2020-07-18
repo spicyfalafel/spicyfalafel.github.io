@@ -14,16 +14,19 @@ a {
     display: flex;
     justify-content: space-around;
 }
-.lab_info{
-    color: white;
-}
+
 .lab_info,
 .result-table,
 .Y_element,
 .X-radios,
 .R_checkboxes{
     font-size: 100%;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', fantasy;
+}
+
+.lab_info{
+    font-size: 20px;
+    color: white;
 }
 
 
