@@ -5,6 +5,11 @@ a {
     color: white;
 }
 
+.graph{
+    stroke-width: 1.5;
+}
+
+
 /*
     shapka
  */
