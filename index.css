@@ -14,25 +14,46 @@ a {
     display: flex;
     justify-content: space-around;
 }
-.lab_info {
+.lab_info{
     color: white;
+}
+.lab_info,
+.result-table,
+.Y_element,
+.X-radios,
+.R_checkboxes{
     font-size: 100%;
     font-family: 'Roboto Slab', serif;
 }
+
+
+.everything_table{
+    width: 100%;
+}
+
+.everything_table .first-row-in-everything-table {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5%;
+}
+
 
 
 
 /*
     input
 */
-.X_radios,
-.R_checkboxes{
+.X-radios,
+.R_checkboxes,
+.Y_element{
     display: flex;
     justify-content: space-between;
-    width: 0;
-    padding: 5px;
+    margin: 20%;
+    font-weight: bolder;
 }
-.x_element_label,
+
+
+.x-element-label,
 .x_radio,
 .r_element_label,
 .r_checkbox{
@@ -41,18 +62,48 @@ a {
 }
 
 
+input[type=text] {
+    margin-left: 5%;
+}
+
+
+/*
+    graph
+ */
+
+
+
+
 /*
     table
  */
-.result_table {
+
+
+.result-table {
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
     width: 100%;
 }
 
-td{
-    border: 1px solid black;
-    background: pink;
+.result-table td {
+    background: #D8E6F3;
+    width: 110px;
 }
 
-.table_cell_text{
+.result-table th{
+    background: #AFCDE7;
+    color: white;
+    padding: 10px 20px;
+}
+
+.result-table th,
+.result-table td{
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+
+.result-table-cell-text{
     text-align: center;
 }
