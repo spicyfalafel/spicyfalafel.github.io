@@ -53,11 +53,11 @@ $y = (float) $_GET['y'];
 $r = (double) $_GET['r'];
 
 
-$time = microtime(true) - $start;
-$result = array($x, $y, $r, checkIfInArea($x, $y, $r), $currentTime, $time);
 if (!isset($_SESSION['history'])) {
     $_SESSION['history'] = array();
 }
+$time = microtime(true) - $start;
+$result = array($x, $y, $r, checkIfInArea($x, $y, $r), $currentTime, $time);
 array_push($_SESSION['history'], $result);
 
 include "set_data_in_table.php";

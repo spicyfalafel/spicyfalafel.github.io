@@ -19,8 +19,8 @@
 <table class="everything_table">
     <tr class="first-row-in-everything-table">
         <td>
-            <table class="result-table">
-                <tr class="result-table-cell-text">
+            <table id="result-table" class="result-table">
+                <tr class="result-table-row">
                     <th>X</th>
                     <th>Y</th>
                     <th>R</th>
@@ -31,10 +31,7 @@
             </table>
         </td>
         <td>
-            <object class="graph"
-                    type="image/svg+xml"
-                    data="../res/graph.svg">
-            </object>
+            <object class="graph" type="image/svg+xml" data="../res/graph.svg"></object>
         </td>
         <td>
             <form id="coordinates-form" action="get_data.php" method="get">
@@ -69,7 +66,7 @@
                     </label>
                 </div>
                 <label class="Y-element-label"> Y:
-                    <input class="y-text-input" type="text" name="y" placeholder="y value"/>
+                    <input class="y-text-input" type="text" name="y" placeholder="y value" required/>
                 </label>
                 <span id="value-validate-text"></span>
                 <div class="R-checkboxes" id="R">
@@ -90,7 +87,7 @@
                         <input class="r-checkbox" type="checkbox" name="r" value="3">
                     </label>
                 </div>
-                <button id="submit-button" type="submit">Отправить</button>
+                <button id="submit-button">Отправить</button>
                 <button type="reset">Очистить</button>
             </form>
         </td>
@@ -99,42 +96,6 @@
 
 
 <script src="../res/jquery.js"></script>
-
-<script>
-    //nvm
-    $("input:checkbox").click(function () {
-        var group = "input:checkbox[name='" + $(this).prop("name") + "']";
-        $(group).prop("checked", false);
-        $(this).prop("checked", true);
-    });
-
-
-    function numberIsInInterval(num, min, max) {
-        return min <= num && num <= max;
-    }
-
-
-    const yTextField = document.getElementsByClassName("y-text-input")[0];
-    const error = document.getElementById('value-validate-text');
-
-
-    yTextField.addEventListener("input", function (event) {
-        const parsedString = Number.parseInt(this.value);
-        if (Number.isInteger(parsedString)) {
-            if (numberIsInInterval(parsedString, -5, 5)) {
-                error.innerText = "OK"
-                error.style.color = "green"
-            } else {
-                error.innerText = "Not correct value: must be in [-5;5]"
-                error.style.color = "red";
-            }
-        } else {
-            error.innerText = "Please enter number only"
-            error.style.color = "red";
-        }
-    })
-
-    const butt = document.getElementById("submit-button");
-</script>
+<script src="../my_script.js"></script>
 </body>
 </html>
