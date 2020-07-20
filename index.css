@@ -22,12 +22,14 @@ a {
 
 .lab_info,
 .result-table,
-.Y_element,
+.Y-element-label,
 .X-radios,
-.R_checkboxes{
+button,
+.R-checkboxes{
     font-size: 100%;
     font-family: 'Roboto Slab', fantasy;
 }
+
 
 .lab_info{
     font-size: 20px;
@@ -51,20 +53,29 @@ a {
 /*
     input
 */
+
+
 .X-radios,
-.R_checkboxes,
-.Y_element{
+.R-checkboxes,
+.Y-element-label,
+#coordinates-form button{
     display: flex;
     justify-content: space-between;
-    margin: 20%;
+    margin: auto;
     font-weight: bolder;
+}
+.R-checkboxes,
+#coordinates-form button,
+#value-validate-text{
+    margin-top: 10%;
 }
 
 
 .x-element-label,
 .x_radio,
-.r_element_label,
-.r_checkbox{
+.r-element-label,
+.r-checkbox,
+#value-validate-text{
     display: block;
     text-align: center;
 }
@@ -73,6 +84,7 @@ a {
 input[type=text] {
     margin-left: 5%;
 }
+
 
 
 /*
