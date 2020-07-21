@@ -1,4 +1,3 @@
-//nvm
 $("input:checkbox").click(function () {
     var group = "input:checkbox[name='" + $(this).prop("name") + "']";
     $(group).prop("checked", false);
@@ -7,8 +6,10 @@ $("input:checkbox").click(function () {
 
 const butt = document.getElementById("submit-button");
 butt.addEventListener('click', submit);
-const yTextField = document.getElementsByClassName("y-text-input")[0];
+const yTextField = document.getElementById("y-text");
 const error = document.getElementById('value-validate-text');
+error.innerText = "AAA"
+yTextField.innerText = "AAA"
 
 yTextField.addEventListener("input", function (event) {
     const yStr = this.value.replace(",", ".");
@@ -32,10 +33,10 @@ function numberIsInInterval(num, min, max) {
 
 const submit = function (e) {
     e.preventDefault();
-    const formData = new FormData(document.querySelector('#coordinates-form'));
-    var response =  fetch("php/get_data.php", {
+    const formData = new FormData(document.getElementById('coordinates-form'));
+    var response = fetch("php/get_data.php", {
         method: 'GET',
         body: formData
     })
-    document.querySelector('#result-table').innerHTML =  response.text();
+    document.getElementById('result-table').innerHTML = "AAAAAAAA";
 };
