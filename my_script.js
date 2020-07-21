@@ -1,16 +1,5 @@
-$("input:checkbox").click(function () {
-    var group = "input:checkbox[name='" + $(this).prop("name") + "']";
-    $(group).prop("checked", false);
-    $(this).prop("checked", true);
-});
-
-const butt = document.getElementById("submit-button");
-butt.addEventListener('click', submit);
 const yTextField = document.getElementById("y-text");
 const error = document.getElementById('value-validate-text');
-error.innerText = "AAA"
-yTextField.innerText = "AAA"
-
 yTextField.addEventListener("input", function (event) {
     const yStr = this.value.replace(",", ".");
     if (!isNaN(yStr)) {
@@ -31,12 +20,24 @@ function numberIsInInterval(num, min, max) {
     return min <= num && num <= max;
 }
 
+const sendButt = document.getElementById("submit-button");
 const submit = function (e) {
     e.preventDefault();
-    const formData = new FormData(document.getElementById('coordinates-form'));
-    var response = fetch("php/get_data.php", {
-        method: 'GET',
-        body: formData
-    })
-    document.getElementById('result-table').innerHTML = "AAAAAAAA";
+    var formData = new FormData(document.getElementById("coordinates-form"));
+    fetch("php/get_data.php?x=" + formData.get("x") + "&y=" + formData.get("y")
+        + "&r=" + formData.get("r")).then(response => response.text())
+        .then(response => document.getElementById('result-table').innerHTML = response);
 };
+sendButt.addEventListener('click', submit);
+
+const clearButt = document.getElementById("clear-button");
+clearButt.addEventListener('click', function (e) {
+    e.preventDefault();
+    fetch("php/clear_data.php").then(response => response.text())
+        .then(response => document.getElementById('result-table').innerHTML = response);
+})
+$("input:checkbox").click(function () {
+    var group = "input:checkbox[name='" + $(this).prop("name") + "']";
+    $(group).prop("checked", false);
+    $(this).prop("checked", true);
+});
