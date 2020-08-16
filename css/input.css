@@ -32,7 +32,20 @@ button,
     text-align: center;
 }
 
-
 input[type=text] {
     margin-left: 5%;
+}
+
+@media (max-width: 960px) {
+    #coordinates-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin:0;
+    }
+    .X-radios,
+    .R-checkboxes,
+    .Y-element-label{
+        margin: auto;
+    }
 }

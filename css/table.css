@@ -1,31 +1,41 @@
 .result-table {
     font-size: 14px;
     border-collapse: collapse;
-    text-align: center;
-    width: 100%;
     font-family: 'Roboto Slab', fantasy;
+    table-layout: fixed;
 }
 
 .result-table td {
     background: #D8E6F3;
-    width: 110px;
-}
+    width: 100px;
 
-
-
-.result-table th{
-    background: #AFCDE7;
-    color: white;
-    padding: 10px 20px;
-}
-
-.result-table th,
-.result-table td{
     border-style: solid;
     border-width: 0 1px 1px 0;
     border-color: white;
 }
 
+.result-table th{
+    background: #AFCDE7;
+    color: white;
+    padding: 10px 20px;
+    width: 100px;
+
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+
+
 .result-table-row{
     text-align: center;
+}
+
+@media (max-width: 960px) {
+    .result-table{
+        font-size: 8px;
+    }
+    .result-table td,
+    .result-table th{
+        width: 4px;
+    }
 }

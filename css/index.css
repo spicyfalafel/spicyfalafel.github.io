@@ -31,3 +31,17 @@ a {
 .graph{
     stroke-width: 1.5;
 }
+
+@media (max-width: 960px) {
+    .first-row-in-everything-table{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header{
+        width: auto;
+    }
+    .lab_info{
+        font-size: 10px;
+    }
+}
