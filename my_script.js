@@ -47,16 +47,16 @@ const submit = function (e) {
     var formData = new FormData(document.getElementById("coordinates-form"));
     let point = $("#point");
 
-    var x = formData.get("x"), y=formData.get("y"), r=formData.get("r");
+    const x = formData.get("x"), y = formData.get("y").replace(",", "."), r = formData.get("r");
 
-    if (yIsOk && X_VALUES.includes(Number(x)) && R_VALUES.includes(Number(r))) {
+    if (yIsOk && X_VALUES.includes(Number(x)) && R_VALUES.includes(Number(r))){
         const xGraph = calculateX(x, r), yGraph = calculateY(y, r);
         point.attr({
             cx: xGraph,
             cy: yGraph,
             visibility: "visible"
         });
-
+        console.log(y);
         fetch("php/get_data.php?x=" + x + "&y=" + y + "&r=" + r)
             .then(response => response.text())
             .then(response => document.getElementById('result-table').innerHTML = response);

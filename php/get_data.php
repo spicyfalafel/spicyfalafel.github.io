@@ -52,7 +52,7 @@ if (!isset($_SESSION['history'])) {
 }
 
 $x = (int) $_GET['x'] ;
-$y = (float) $_GET['y'] ;
+$y = (double) $_GET['y'] ;
 $r = (double) $_GET['r'];
 //in seconds
 $time = microtime(true) - $start;
